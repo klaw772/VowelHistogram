@@ -1,0 +1,13 @@
+
+
+Write a program in C that accepts this file and the input file, reads it character by character
+and outputs the following: 
+
+A virtical histogram that lists the summary of how vowels appear in this file. You may run the program
+using the file that is a keyboard input. 
+
+Your file should also print the message as follows: 
+
+This file has X number of numerical digists, where X contains your countende number of numbers. 
+
+The current year is 2018, and this file is being created at 11:49 am, on 10/2/2018.
