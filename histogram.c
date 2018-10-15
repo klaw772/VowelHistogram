@@ -1,46 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-int main()
+
+void main()
 {
+  int aCount=0,eCount=0,iCount=0,oCount=0,uCount=0,sum=0;
   char c;
-  int aCount, eCount, iCount, oCount, uCount = 0;
-  int numCount = 0;
   FILE *ptr = fopen("AssignmentTwo.txt", "r");
-  while ((c = fgetc(ptr)) != EOF)
+  while ((c=fgetc(ptr))!=EOF)
     {
-      if (c=='a')
-	{
-	  aCount++;
-	}
-      else if (c=='e')
-	{
-	  eCount++;
-	}
-      else if (c=='i')
-	{
-	  iCount++;
-	}
-      else if (c=='o')
-	{
-	  oCount++;
-	}
-      else if (c=='u')
-	{
-	  uCount++;
-	}
-      else if (isdigit(c) != 0)
-	{
-	  numCount++;
-	}
-      else continue;
+      if (c=='a'||c=='A')
+        aCount=aCount+1;
+      if (c=='e'||c=='E')
+        eCount=eCount+1;
+      if (c=='i'||c=='I')
+        iCount=iCount+1;
+      if (c=='o'||c=='O')
+        oCount=oCount+1;
+      if (c=='u'||c=='U')
+        uCount=uCount+1;
     }
-  printf("Number of A's is %d\n", aCount);
-  printf("Number of E's is %d\n", eCount);
-  printf("Number of I's is %d\n", iCount);
-  printf("Number of O's is %d\n", oCount);
-  printf("Number of U's is %d\n", uCount);
-  printf("Number of digits is %d\n", numCount);
+  sum=aCount+eCount+iCount+oCount+uCount;
+  printf("\nThere are %d a's in this file.",aCount);
+  printf("\nThere are %d e's in this file.",eCount);
+  printf("\nThere are %d i's in this file.",iCount);
+  printf("\nThere are %d o's in this file.",oCount);
+  printf("\nThere are %d u's in this file.",uCount);
+  printf("\nTotal no. of vowels in the text is %d.",sum);
   fclose(ptr);
   return 0;
 }
